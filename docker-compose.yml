@@ -1,0 +1,12 @@
+version: '3'
+services:
+    goapi:
+        build: .
+        image: golang:latest
+        ports:
+        - "3001:3001"
+    mongodb:
+        image: mongo:latest
+        ports:
+        - "27017:27017"
+        
