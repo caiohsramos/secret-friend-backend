@@ -2,7 +2,7 @@ FROM golang:latest
 
 WORKDIR /go/src/app
 
-COPY . .
+COPY *.go ./
 
 RUN go get -d -v ./...
 RUN go install -v ./...
