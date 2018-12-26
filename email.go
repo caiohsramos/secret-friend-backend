@@ -13,9 +13,10 @@ func Send(body, to string) {
 		"To: " + to + "\n" +
 		"Subject: Seu sorteio do amigo secreto!\n\n" +
 		body
+	email := os.Getenv("GMAIL_EMAIL")
 	password := os.Getenv("GMAIL_PASSWORD")
 	err := smtp.SendMail("smtp.gmail.com:587",
-		smtp.PlainAuth("", "caioramos97@gmail.com", password, "smtp.gmail.com"),
+		smtp.PlainAuth("", email, password, "smtp.gmail.com"),
 		from, []string{to}, []byte(msg))
 	if err != nil {
 		log.Printf("smtp error: %s", err)

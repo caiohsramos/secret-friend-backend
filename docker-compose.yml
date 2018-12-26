@@ -2,9 +2,12 @@ version: '3'
 services:
     goapi:
         build: .
-        image: golang:latest
         ports:
         - "3001:3001"
+        environment:
+        - GMAIL_EMAIL=caioramos97@gmail.com
+        - GMAIL_PASSWORD=petropolis120
+        - MONGO_CONNECTION=mongodb://localhost:27017
     mongodb:
         image: mongo:latest
         ports:
